@@ -1,0 +1,32 @@
+<!-- <li *ngFor=" let customer of customers" (click)="selectCustomer(customer)">
+        <ng-container *ngIf="customer && customer.age> 20">
+            <p>{{customer.firstName}} {{customer.lastName}}</p>
+
+        </ng-container>
+    </li> -->
+
+<!-- <li *ngFor="let customer of customers" (click)="selectCustomer(customer)">
+        <ng-container *ngIf="customer && customer.age !== undefined && customer.age >320">
+          // Yaş koşulu sağlandığında bu içerik görüntülenecek 
+          <p>{{ customer.firstName }} {{ customer.lastName }}</p>
+        </ng-container>
+      </li> -->
+
+
+
+      <h1>Current city is {{city}}</h1>
+<ul>
+
+    <div *ngFor="let customer of customers" (click)="selectCustomer(customer)">
+        <li *ngIf="customer && customer.age !== undefined && customer.age >0">
+            <strong>{{ customer.firstName }} {{ customer.lastName }}</strong>
+        </li>
+    </div>
+
+</ul>
+<!-- <h4 *ngIf="selectedCustomer; else elseBlock">{{selectedCustomer?.firstName}} sectiniz!!</h4> -->
+<h4 *ngIf="selectedCustomer; else elseBlock">{{ selectedCustomer.firstName }} sectiniz!!</h4>
+
+<ng-template #elseBlock>
+    Bir sey secmediniz!!
+</ng-template>
